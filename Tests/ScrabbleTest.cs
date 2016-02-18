@@ -39,6 +39,13 @@ namespace ScrabbleNS
       Scrabble test = new Scrabble("ask");
       Assert.Equal(7, test.WordValue());
     }
+
+    [Fact]
+    public void WordValue_ForLook_8()
+    {
+      Scrabble test = new Scrabble("look");
+      Assert.Equal(8, test.WordValue());
+    }
     /* EXAMPLE
     // Have a queen object that knows what coordinants its at
     [Fact]

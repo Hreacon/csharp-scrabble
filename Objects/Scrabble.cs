@@ -37,5 +37,17 @@ namespace ScrabbleNS.Objects
       return score;
     }
 
+    public int WordValue()
+    {
+      int score = 0;
+
+      char[] wordArray = _userWord.ToCharArray();
+      for (var i = 0; i < wordArray.Length; i++)
+      {
+        score += LetterValue(wordArray[i]);
+      }
+      return score;
+    }
+
   } // end class
 } // end namespace
