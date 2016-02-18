@@ -25,6 +25,12 @@ namespace ScrabbleNS
     {
       Scrabble test = new Scrabble("a");
       Assert.Equal(1, test.LetterValue('a'));
+      Assert.Equal(2, test.LetterValue('d'));
+      Assert.Equal(3, test.LetterValue('b'));
+      Assert.Equal(4, test.LetterValue('f'));
+      Assert.Equal(5, test.LetterValue('k'));
+      Assert.Equal(8, test.LetterValue('j'));
+      Assert.Equal(10, test.LetterValue('q'));
     }
     /* EXAMPLE
     // Have a queen object that knows what coordinants its at
