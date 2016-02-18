@@ -8,12 +8,17 @@ namespace ScrabbleNS
     public HomeModule()
     {
       Get["/"] = _ => {
-        return View["index.cshtml"];
+        return View["index.cshtml", Scrabble.GetAll()];
       };
       Post["/scrabble"]= _ =>
       {
-        Scrabble newGame = new Scrabble(Request.Form["userWord"]);
-        return View["scrabble.cshtml", newGame];
+        new Scrabble(Request.Form["userWord"]);
+
+        return View["index.cshtml", Scrabble.GetAll()];
+      };
+      Get["/deleteAll"] = _ => {
+        Scrabble.DeleteAll();
+        return View["index.cshtml", Scrabble.GetAll()];
       };
     }
   }

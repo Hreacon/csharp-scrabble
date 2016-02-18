@@ -18,6 +18,7 @@ namespace ScrabbleNS.Objects
       scrabbleValues.Add("K", 5);
       scrabbleValues.Add("JX", 8);
       scrabbleValues.Add("QZ", 10);
+      Save();
     }
 
     public string GetWord()
@@ -51,6 +52,25 @@ namespace ScrabbleNS.Objects
         score += LetterValue(wordArray[i]);
       }
       return score;
+    }
+
+    private static Dictionary <string, int> _wordList = new Dictionary<string, int> {};
+
+    public void Save()
+    {
+      //this method is supposed to add the user word and the score to a dictionary to display to the page using razor.
+      if(!_wordList.ContainsKey(_userWord))
+        _wordList.Add(_userWord, WordValue());
+    }
+
+    public static Dictionary<string, int> GetAll()
+    {
+      return _wordList;
+    }
+
+    public static void DeleteAll()
+    {
+      _wordList.Clear();
     }
 
   } // end class

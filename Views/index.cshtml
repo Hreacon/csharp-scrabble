@@ -1,6 +1,14 @@
 @Html.Partial("header.cshtml")
 
+<ul>
+  @foreach(var item in Model)
+  {
+    <li>@item.Key @item.Value</li>
+  }
+</ul>
 <form class="" action="/scrabble" method="post">
   <label for="userWord">Word to find score:</label><input type="text" name="userWord" value="" autofocus>
   <input type="submit" name="submit" value="Get Your score">
 </form>
+
+<a href="/deleteAll">Delete List</a>

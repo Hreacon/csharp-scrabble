@@ -1,5 +1,7 @@
 using Xunit;
 using ScrabbleNS.Objects;
+using System.Collections.Generic;
+
 namespace ScrabbleNS
 {
   public class ScrabbleTest
@@ -31,6 +33,7 @@ namespace ScrabbleNS
       Assert.Equal(5, test.LetterValue('k'));
       Assert.Equal(8, test.LetterValue('j'));
       Assert.Equal(10, test.LetterValue('q'));
+      Scrabble.DeleteAll();
     }
 
     [Fact]
@@ -38,6 +41,7 @@ namespace ScrabbleNS
     {
       Scrabble test = new Scrabble("ask");
       Assert.Equal(7, test.WordValue());
+      Scrabble.DeleteAll();
     }
 
     [Fact]
@@ -45,6 +49,16 @@ namespace ScrabbleNS
     {
       Scrabble test = new Scrabble("look");
       Assert.Equal(8, test.WordValue());
+      Scrabble.DeleteAll();
+    }
+
+    [Fact]
+    public void Return_Result_Of_User_Entry()
+    {
+      Dictionary <string, int> test = new Dictionary <string, int> { {"look", 8} };
+      Scrabble scrab = new Scrabble("look");
+      Assert.Equal(test, Scrabble.GetAll());
+      Scrabble.DeleteAll();
     }
     /* EXAMPLE
     // Have a queen object that knows what coordinants its at
