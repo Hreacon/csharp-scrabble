@@ -24,7 +24,7 @@ namespace ScrabbleNS
     public void LetterValue_ForA_1()
     {
       Scrabble test = new Scrabble("a");
-      Assert.Equals(1, test.LetterValue('a'));
+      Assert.Equal(1, test.LetterValue('a'));
     }
     /* EXAMPLE
     // Have a queen object that knows what coordinants its at
