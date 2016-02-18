@@ -20,6 +20,10 @@ namespace ScrabbleNS.Objects
       scrabbleValues.Add("QZ", 10);
     }
 
+    public string GetWord()
+    {
+      return _userWord;
+    }
     public int LetterValue(char letter)
     {
       int score = 0;
