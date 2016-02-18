@@ -22,7 +22,19 @@ namespace ScrabbleNS.Objects
 
     public int LetterValue(char letter)
     {
-      return 0;
+      int score = 0;
+      string stringLetter = letter.ToString();
+
+      foreach(var values in scrabbleValues)
+      {
+        if(values.Key.Contains(stringLetter.ToUpper()))
+        {
+          score = values.Value;
+        }
+      }
+
+      Console.WriteLine("for letter " + letter + " score is " + score);
+      return score;
     }
 
   } // end class
